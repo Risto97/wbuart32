@@ -21,7 +21,8 @@ module axiluart_top
 
     logic rx, tx, cts_n, rts_n, rx_int, tx_int, rxfifo_int, tx_fifo_int;
 
-    AXI_LITE.Master master;
+    AXI_LITE #(.AXI_ADDR_WIDTH(AXI_ADDR_WIDTH), .AXI_DATA_WIDTH(AXI_DATA_WIDTH)) master();
+
 
     axi_to_axi_lite_intf #(.AXI_ADDR_WIDTH(AXI_ADDR_WIDTH),
                            .AXI_DATA_WIDTH(AXI_DATA_WIDTH),
@@ -35,8 +36,8 @@ module axiluart_top
                             .mst(master)
                            );
 
-    axiluart #(C_AXI_ADDR_WIDTH(AXI_ADDR_WIDTH),
-               C_AXI_DATA_WIDTH(AXI_DATA_WIDTH))
+    axiluart #(.C_AXI_ADDR_WIDTH(AXI_ADDR_WIDTH),
+               .C_AXI_DATA_WIDTH(AXI_DATA_WIDTH))
                i_axiluart(
                 .S_AXI_ACLK(clk_i),
                 .S_AXI_ARESETN(rst_ni),

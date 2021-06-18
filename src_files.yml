@@ -1,0 +1,15 @@
+axiluart:
+  incdirs:
+    - ../register_interface/include
+    - ../register_interface/vendor/lowrisc_opentitan/include
+  files:
+    - rtl/axiluart_top.sv
+    - rtl/axil_uart.v
+    - rtl/skidbuffer.v
+    - rtl/rxuart.v
+    - rtl/txuart.v
+    - rtl/rxuartlite.v
+    - rtl/ufifo.v
+    - rtl/txuartlite.v
+  vlog_opts:
+    - -L register_interface_lib

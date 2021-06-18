@@ -4,7 +4,7 @@ axiluart:
     - ../register_interface/vendor/lowrisc_opentitan/include
   files:
     - rtl/axiluart_top.sv
-    - rtl/axil_uart.v
+    - rtl/axiluart.v
     - rtl/skidbuffer.v
     - rtl/rxuart.v
     - rtl/txuart.v

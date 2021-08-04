@@ -36,9 +36,7 @@ module axiluart_top
                             .mst(master)
                            );
 
-    axiluart #(.C_AXI_ADDR_WIDTH(AXI_ADDR_WIDTH),
-               .C_AXI_DATA_WIDTH(AXI_DATA_WIDTH))
-               i_axiluart(
+    axiluart i_axiluart(
                 .S_AXI_ACLK(clk_i),
                 .S_AXI_ARESETN(rst_ni),
                 .S_AXI_AWVALID(master.aw_valid),
@@ -66,7 +64,7 @@ module axiluart_top
                 .o_rts_n(rts_n),
                 .o_uart_rx_int(rx_int),
                 .o_uart_tx_int(tx_int),
-                .o_ouart_rxfifo_int(rxfifo_int),
+                .o_uart_rxfifo_int(rxfifo_int),
                 .o_uart_txfifo_int(txfifo_int)
                );
 endmodule
